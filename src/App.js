@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import Preview from "./components/Preview";
 export default class App extends Component {
 	constructor() {
 		super();
@@ -72,6 +73,10 @@ export default class App extends Component {
 		};
 	}
 	render() {
-		return <div></div>;
+		return (
+			<div>
+				<Preview state={this.state} />
+			</div>
+		);
 	}
 }

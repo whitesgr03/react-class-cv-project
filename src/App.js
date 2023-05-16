@@ -82,6 +82,7 @@ export default class App extends Component {
 		return (
 			<div>
 				<Resume
+					state={this.state}
 				/>
 				<Preview state={this.state} />
 			</div>

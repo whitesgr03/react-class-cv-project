@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-class-cv-project/static/css/main.269a290f.css",
-    "main.js": "/react-class-cv-project/static/js/main.82154d76.js",
+    "main.js": "/react-class-cv-project/static/js/main.cfdfc325.js",
     "index.html": "/react-class-cv-project/index.html",
     "main.269a290f.css.map": "/react-class-cv-project/static/css/main.269a290f.css.map",
-    "main.82154d76.js.map": "/react-class-cv-project/static/js/main.82154d76.js.map"
+    "main.cfdfc325.js.map": "/react-class-cv-project/static/js/main.cfdfc325.js.map"
   },
   "entrypoints": [
     "static/css/main.269a290f.css",
-    "static/js/main.82154d76.js"
+    "static/js/main.cfdfc325.js"
   ]
 }

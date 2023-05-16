@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import Preview from "./components/Preview";
+import Resume from "./components/Resume";
+
 export default class App extends Component {
 	constructor() {
 		super();
@@ -79,6 +81,8 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
+				<Resume
+				/>
 				<Preview state={this.state} />
 			</div>
 		);

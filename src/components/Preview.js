@@ -1,5 +1,16 @@
 import React from "react";
 
+import { format, isThisMonth } from "date-fns";
+
+const getValue = value => {
+	const date = new Date(value);
+	return !(date instanceof Date && !isNaN(date))
+		? value
+		: isThisMonth(date)
+		? "Present"
+		: format(date, "MMM. yyyy");
+};
+
 const Preview = ({ state }) => (
 	<div className="preview">
 		<Personal personal={state.personal} />
@@ -36,7 +47,8 @@ const Employment = ({ employment }) => {
 							<p>
 								<span>{item.employer}</span>
 								<span>
-									{item.startDate} - {item.endDate}
+									{getValue(item.startDate)} -{" "}
+									{getValue(item.endDate)}
 								</span>
 							</p>
 							<p>
@@ -71,7 +83,9 @@ const Education = ({ education }) => {
 						<div key={item.id}>
 							<p>
 								<span>{item.school}</span>
-								<span>Graduation {item.graduationDate}</span>
+								<span>
+									Graduation {getValue(item.graduationDate)}
+								</span>
 							</p>
 							<p>
 								<span>{item.degreeMajors}</span>
@@ -98,7 +112,7 @@ const Education = ({ education }) => {
 const Skills = ({ skills }) => (
 	<div className={skills.type}>
 		<p>SKILLS</p>
-		<p>{skills.data.text}</p>
+		<p>{skills.data.skill}</p>
 	</div>
 );
 

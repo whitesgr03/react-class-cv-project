@@ -158,6 +158,8 @@ export default class App extends Component {
 					state={this.state}
 					onAddNewForm={this.onAddNewForm}
 					onRemoveForm={this.onRemoveForm}
+					onAddNewDescribe={this.onAddNewDescribe}
+					onRemoveDescribe={this.onRemoveDescribe}
 				/>
 				<Preview state={this.state} />
 			</div>

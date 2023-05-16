@@ -77,6 +77,8 @@ export default class App extends Component {
 		};
 		this.onAddNewForm = this.onAddNewForm.bind(this);
 		this.onRemoveForm = this.onRemoveForm.bind(this);
+		this.onAddNewDescribe = this.onAddNewDescribe.bind(this);
+		this.onRemoveDescribe = this.onRemoveDescribe.bind(this);
 	onAddNewForm = type => {
 		this.setState({
 			[type]: {
@@ -105,6 +107,50 @@ export default class App extends Component {
 			},
 		});
 	};
+
+	onAddNewDescribe = (type, id) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: this.state[type].dataList.map(data =>
+					data.id === id
+						? {
+								...data,
+								describes: [
+									...data.describes,
+									{
+										id:
+											data.describes.length === 0
+												? 1
+												: data.describes.at(-1).id + 1,
+										text: this.state[type].dataDescribe,
+									},
+								],
+						  }
+						: data
+				),
+			},
+		});
+	};
+
+	onRemoveDescribe = (type, dataId, describeId) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: this.state[type].dataList.map(data =>
+					data.id === dataId
+						? {
+								...data,
+								describes: data.describes.filter(
+									describe => describe.id !== describeId
+								),
+						  }
+						: data
+				),
+			},
+		});
+	};
+
 	render() {
 		return (
 			<div>

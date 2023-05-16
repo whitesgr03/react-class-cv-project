@@ -207,6 +207,9 @@ export default class App extends Component {
 			<div>
 				<Resume
 					state={this.state}
+					handleDataChange={this.handleDataChange}
+					handleDataListChange={this.handleDataListChange}
+					handleDescribeChange={this.handleDescribeChange}
 					onAddNewForm={this.onAddNewForm}
 					onRemoveForm={this.onRemoveForm}
 					onAddNewDescribe={this.onAddNewDescribe}

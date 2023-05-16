@@ -110,6 +110,8 @@ export default class App extends Component {
 			<div>
 				<Resume
 					state={this.state}
+					onAddNewForm={this.onAddNewForm}
+					onRemoveForm={this.onRemoveForm}
 				/>
 				<Preview state={this.state} />
 			</div>

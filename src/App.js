@@ -19,7 +19,7 @@ export default class App extends Component {
 			employment: {
 				type: "employment",
 				data: {
-					id: 1,
+					id: null,
 					jobTitle: "Job Title",
 					employer: "Company Name",
 					startDate: "Month Year",
@@ -28,6 +28,7 @@ export default class App extends Component {
 					state: "ST",
 					describes: [{ id: 1, text: "Core responsibility" }],
 				},
+				dataDescribe: "Core responsibility",
 				dataList: [
 					{
 						id: 1,
@@ -52,6 +53,7 @@ export default class App extends Component {
 					state: "ST",
 					describes: [{ id: 1, text: "Honors or fun stuff" }],
 				},
+				dataDescribe: "Honors or fun stuff",
 				dataList: [
 					{
 						id: 1,
@@ -67,8 +69,10 @@ export default class App extends Component {
 			skills: {
 				type: "skills",
 				data: {
-					text: "Important skills or abilities required to fulfill the task role.",
+					skill: "Important skills or abilities required to fulfill the task role.",
 				},
+			},
+		};
 			},
 		};
 	}

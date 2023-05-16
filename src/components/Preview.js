@@ -3,7 +3,24 @@ import { Component } from "react";
 import { format, isThisMonth } from "date-fns";
 
 export default class Preview extends Component {
+	constructor(props) {
+		super(props);
 
+		this.onConvertDate = this.onConvertDate.bind(this);
+		this.onCreateDescribes = this.onCreateDescribes.bind(this);
+	}
+
+	onConvertDate = value => {
+		const date = new Date(value);
+		return !(date instanceof Date && !isNaN(date))
+			? value
+			: isThisMonth(date)
+			? "Present"
+			: format(date, "MMM. yyyy");
+	};
+
+	onCreateDescribes = list =>
+		list.map(describe => <li key={describe.id}>{describe.text}</li>);
 
 	render() {
 		const { state } = this.props;
@@ -121,9 +138,3 @@ const Skills = ({ skills }) => (
 		<p>{skills.data.skill}</p>
 	</div>
 );
-
-const createDescribe = list => {
-	return list.map(describe => <li key={describe.id}>{describe.text}</li>);
-};
-
-export default Preview;

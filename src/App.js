@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 import Preview from "./components/Preview";
 import Resume from "./components/Resume";

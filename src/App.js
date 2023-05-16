@@ -75,9 +75,36 @@ export default class App extends Component {
 				},
 			},
 		};
+		this.onAddNewForm = this.onAddNewForm.bind(this);
+		this.onRemoveForm = this.onRemoveForm.bind(this);
+	onAddNewForm = type => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: [
+					...this.state[type].dataList,
+					{
+						...this.state[type].data,
+						id:
+							this.state[type].dataList.length === 0
+								? 1
+								: this.state[type].dataList.at(-1).id + 1,
+					},
+				],
 			},
-		};
-	}
+		});
+	};
+
+	onRemoveForm = (type, id) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: this.state[type].dataList.filter(
+					data => data.id !== id
+				),
+			},
+		});
+	};
 	render() {
 		return (
 			<div>

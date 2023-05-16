@@ -60,7 +60,7 @@ const Personal = ({ personal }) => (
 	</div>
 );
 
-const Employment = ({ employment }) => {
+const Employment = ({ employment, onConvertDate, onCreateDescribes }) => {
 	const dataList =
 		employment.dataList.length === 0
 			? null
@@ -70,8 +70,8 @@ const Employment = ({ employment }) => {
 							<p>
 								<span>{item.employer}</span>
 								<span>
-									{getValue(item.startDate)} -{" "}
-									{getValue(item.endDate)}
+									{onConvertDate(item.startDate)} -{" "}
+									{onConvertDate(item.endDate)}
 								</span>
 							</p>
 							<p>
@@ -83,7 +83,7 @@ const Employment = ({ employment }) => {
 							<ul>
 								{item.describes.length === 0
 									? null
-									: createDescribe(item.describes)}
+									: onCreateDescribes(item.describes)}
 							</ul>
 						</div>
 					);
@@ -97,7 +97,7 @@ const Employment = ({ employment }) => {
 	);
 };
 
-const Education = ({ education }) => {
+const Education = ({ education, onConvertDate, onCreateDescribes }) => {
 	const dataList =
 		education.dataList.length === 0
 			? null
@@ -107,7 +107,8 @@ const Education = ({ education }) => {
 							<p>
 								<span>{item.school}</span>
 								<span>
-									Graduation {getValue(item.graduationDate)}
+									Graduation{" "}
+									{onConvertDate(item.graduationDate)}
 								</span>
 							</p>
 							<p>
@@ -119,7 +120,7 @@ const Education = ({ education }) => {
 							<ul>
 								{item.describes.length === 0
 									? null
-									: createDescribe(item.describes)}
+									: onCreateDescribes(item.describes)}
 							</ul>
 						</div>
 					);

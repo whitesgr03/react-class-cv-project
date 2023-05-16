@@ -75,10 +75,61 @@ export default class App extends Component {
 				},
 			},
 		};
+		this.handleDataChange = this.handleDataChange.bind(this);
+		this.handleDataListChange = this.handleDataListChange.bind(this);
+		this.handleDescribeChange = this.handleDescribeChange.bind(this);
 		this.onAddNewForm = this.onAddNewForm.bind(this);
 		this.onRemoveForm = this.onRemoveForm.bind(this);
 		this.onAddNewDescribe = this.onAddNewDescribe.bind(this);
 		this.onRemoveDescribe = this.onRemoveDescribe.bind(this);
+	}
+
+	handleDataChange = (type, name, value) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				data: {
+					...this.state[type].data,
+					[name]: value,
+				},
+			},
+		});
+	};
+
+	handleDataListChange = (type, id, name, value) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: this.state[type].dataList.map(data =>
+					data.id === id ? { ...data, [name]: value } : data
+				),
+			},
+		});
+	};
+
+	handleDescribeChange = (type, dataId, describeId, value) => {
+		this.setState({
+			[type]: {
+				...this.state[type],
+				dataList: this.state[type].dataList.map(data =>
+					data.id === dataId
+						? {
+								...data,
+								describes: data.describes.map(describe =>
+									describe.id === describeId
+										? {
+												...describe,
+												text: value,
+										  }
+										: describe
+								),
+						  }
+						: data
+				),
+			},
+		});
+	};
+
 	onAddNewForm = type => {
 		this.setState({
 			[type]: {

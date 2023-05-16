@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.269a290f.css",
-    "main.js": "/static/js/main.82154d76.js",
-    "index.html": "/index.html",
-    "main.269a290f.css.map": "/static/css/main.269a290f.css.map",
-    "main.82154d76.js.map": "/static/js/main.82154d76.js.map"
+    "main.css": "/whitesgr03/react-class-cv-project/static/css/main.269a290f.css",
+    "main.js": "/whitesgr03/react-class-cv-project/static/js/main.82154d76.js",
+    "index.html": "/whitesgr03/react-class-cv-project/index.html",
+    "main.269a290f.css.map": "/whitesgr03/react-class-cv-project/static/css/main.269a290f.css.map",
+    "main.82154d76.js.map": "/whitesgr03/react-class-cv-project/static/js/main.82154d76.js.map"
   },
   "entrypoints": [
     "static/css/main.269a290f.css",

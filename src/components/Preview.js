@@ -2,23 +2,29 @@ import { Component } from "react";
 
 import { format, isThisMonth } from "date-fns";
 
-const getValue = value => {
-	const date = new Date(value);
-	return !(date instanceof Date && !isNaN(date))
-		? value
-		: isThisMonth(date)
-		? "Present"
-		: format(date, "MMM. yyyy");
-};
+export default class Preview extends Component {
 
-const Preview = ({ state }) => (
-	<div className="preview">
-		<Personal personal={state.personal} />
-		<Employment employment={state.employment} />
-		<Education education={state.education} />
-		<Skills skills={state.skills} />
-	</div>
-);
+
+	render() {
+		const { state } = this.props;
+		return (
+			<div className="preview">
+				<Personal personal={state.personal} />
+				<Employment
+					employment={state.employment}
+					onConvertDate={this.onConvertDate}
+					onCreateDescribes={this.onCreateDescribes}
+				/>
+				<Education
+					education={state.education}
+					onConvertDate={this.onConvertDate}
+					onCreateDescribes={this.onCreateDescribes}
+				/>
+				<Skills skills={state.skills} />
+			</div>
+		);
+	}
+}
 
 const Personal = ({ personal }) => (
 	<div className={personal.type}>

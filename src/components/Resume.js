@@ -92,8 +92,8 @@ class Wrap extends Component {
 		});
 	};
 
-	componentDidUpdate = () => {
-		this.ref.current.clientHeight !== this.state.wrapBlockHight &&
+	componentDidUpdate = prevProps => {
+		this.props.describes.length !== prevProps.describes.length &&
 			this.setState({
 				...this.state,
 				wrapBlockHight: this.ref.current.clientHeight,

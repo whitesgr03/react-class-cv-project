@@ -87,18 +87,12 @@ const Textarea = ({
 );
 
 class Wrap extends Component {
-	constructor(props) {
-		super(props);
+	state = {
+		wrapBlockHight: null,
+		displayForm: false,
+	};
 
-		this.state = {
-			wrapBlockHight: null,
-			displayForm: false,
-		};
-
-		this.ref = createRef();
-
-		this.onDisplay = this.onDisplay.bind(this);
-	}
+	ref = createRef();
 
 	componentDidMount = () => {
 		this.setState({

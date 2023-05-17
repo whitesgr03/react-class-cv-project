@@ -3,51 +3,42 @@ import React, { Component, createRef } from "react";
 import Icon from "@mdi/react";
 import { mdiTrashCanOutline, mdiChevronDown } from "@mdi/js";
 
-export default class Resume extends Component {
-	render() {
-		const {
-			state,
-			handleDataChange,
-			handleDataListChange,
-			handleDescribeChange,
-			onAddNewForm,
-			onRemoveForm,
-			onAddNewDescribe,
-			onRemoveDescribe,
-		} = this.props;
-
-		return (
-			<div className="resume">
-				<Personal
-					personal={state.personal}
-					handleDataChange={handleDataChange}
-				/>
-				<Employment
-					employment={state.employment}
-					onAddNewForm={onAddNewForm}
-					onRemoveForm={onRemoveForm}
-					onAddNewDescribe={onAddNewDescribe}
-					onRemoveDescribe={onRemoveDescribe}
-					handleDataListChange={handleDataListChange}
-					handleDescribeChange={handleDescribeChange}
-				/>
-				<Education
-					education={state.education}
-					onAddNewForm={onAddNewForm}
-					onRemoveForm={onRemoveForm}
-					onAddNewDescribe={onAddNewDescribe}
-					onRemoveDescribe={onRemoveDescribe}
-					handleDataListChange={handleDataListChange}
-					handleDescribeChange={handleDescribeChange}
-				/>
-				<Skills
-					skills={state.skills}
-					handleDataChange={handleDataChange}
-				/>
-			</div>
-		);
-	}
-}
+const Resume = ({
+	state,
+	handleDataChange,
+	handleDataListChange,
+	handleDescribeChange,
+	onAddNewForm,
+	onRemoveForm,
+	onAddNewDescribe,
+	onRemoveDescribe,
+}) => (
+	<div className="resume">
+		<Personal
+			personal={state.personal}
+			handleDataChange={handleDataChange}
+		/>
+		<Employment
+			employment={state.employment}
+			onAddNewForm={onAddNewForm}
+			onRemoveForm={onRemoveForm}
+			onAddNewDescribe={onAddNewDescribe}
+			onRemoveDescribe={onRemoveDescribe}
+			handleDataListChange={handleDataListChange}
+			handleDescribeChange={handleDescribeChange}
+		/>
+		<Education
+			education={state.education}
+			onAddNewForm={onAddNewForm}
+			onRemoveForm={onRemoveForm}
+			onAddNewDescribe={onAddNewDescribe}
+			onRemoveDescribe={onRemoveDescribe}
+			handleDataListChange={handleDataListChange}
+			handleDescribeChange={handleDescribeChange}
+		/>
+		<Skills skills={state.skills} handleDataChange={handleDataChange} />
+	</div>
+);
 
 const Textarea = ({
 	index,
@@ -558,3 +549,5 @@ const Skills = ({ skills, handleDataChange }) => (
 		</form>
 	</div>
 );
+
+export default Resume;
